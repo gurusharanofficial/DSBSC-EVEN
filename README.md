@@ -7,7 +7,9 @@ To write a program to perform DSBSC modulation and demodulation using SCI LAB an
 
 EQUIPMENTS REQUIRED
 
-• Computer with i3 Processor • SCI LAB
+• Computer with i3 Processor
+
+• SCI LAB
 
 Note: Keep all the switch faults in off position
 
@@ -26,7 +28,26 @@ Model Waveform
 <img width="703" height="679" alt="image" src="https://github.com/user-attachments/assets/736bef01-c500-4225-85e4-92c4e2fdf692" />
 
 Program
+```
+Am=6.9;
+fm=411;
+fc=4110;
+fs=41100;
+t=0:1/fs:2/fm;
+m=Am*cos(2*3.14*fm*t);
+subplot(3,1,1);
+plot(t,m);
+Ac=13.8;  
+c=Ac*cos(2*3.14*fc*t);
+subplot(3,1,2);
+plot(t,c);
+s1=(Ac+m).*cos(2*3.14*fc*t);
+s2=(Ac-m).*cos(2*3.14*fc*t);
+s=(s1-s2);
+subplot(3,1,3);
+plot(t,s);
 
+```
 Output Graph
 
 Tablular Column
